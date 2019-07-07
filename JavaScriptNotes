@@ -72,7 +72,27 @@ ES6 - introduced built in modules
 	 stack - method calls - single thread provided for execution . function calls form stack of frames.
 	 Web APIS - built into browser - They are not part of the JavaScript language itself, rather they are built on top of the core JavaScript language
 	 Web Workers introduce the possibility of parallel execution inside the browser.
-	 
+12. Async/await - since ES2017 asynchronous JavaScript is even simpler with the async/await syntax.
+	async/await is built on promises.They make the code look like it’s synchronous, but it’s asynchronous and non-blocking behind the scenes.
+	 An async function returns a promise, like in this example:
+	 const doSomethingAsync = () => {
+	  return new Promise(resolve => {
+	    setTimeout(() => resolve('I did something'), 3000)
+	  })
+	}
+	When you want to call this function you prepend await
+	const doSomething = async () => {
+	  console.log(await doSomethingAsync())
+	}
+13. Javascript anti patterns - 
+an anti-pattern is a bad design that is worthy of documenting. Examples of anti-patterns in JavaScript are the following:
+
+Polluting the global namespace by defining a large number of variables in the global context
+Passing strings rather than functions to either setTimeout or setInterval as this triggers the use of eval() internally.
+Modifying the Object class prototype (this is a particularly bad anti-pattern)
+Using JavaScript in an inline form as this is inflexible
+The use of document.write where native DOM alternatives such as document.createElement are more appropriate
+	
   
 
   
